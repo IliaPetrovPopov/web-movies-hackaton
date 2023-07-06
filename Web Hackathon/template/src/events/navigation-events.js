@@ -47,14 +47,18 @@ const renderHome = () => {
   q(CONTAINER_SELECTOR).innerHTML = toHomeView();
 };
 
-const renderCategories = () => {
-  // missing implementation
+const renderCategories = async () => {
+  const categories = await loadCategories();
+  q(CONTAINER_SELECTOR).innerHTML = toCategoriesView(categories);
 };
 
 const renderFavorites = () => {
-  // missing implementation
+  const favoriteMoviesIDs = getFavorites();
+  const favoriteMovies = favoriteMoviesIDs.map((id) => getMovieById(id));
+
+  q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(favoriteMovies);
 };
 
 const renderAbout = () => {
-  // missing implementation
+  q(CONTAINER_SELECTOR).innerHTML = toAboutView();
 };
