@@ -30,13 +30,14 @@ export const loadPage = async (page = '') => {
 
 };
 
-export const renderMovieDetails = (id = null) => {
-  // missing implementation
+export const renderMovieDetails = async (id = null) => {
+  const movie = await loadSingleMovie(id);
+  q(CONTAINER_SELECTOR).innerHTML = toSingleMovieView(movie);
 };
 
-export const renderCategory = (categoryId = null) => {
-  // missing partial implementation
-
+export const renderCategory = async (categoryId = null) => {
+  const category = await loadCategory(categoryId);
+  const movies = await loadMovies(categoryId);
   q(CONTAINER_SELECTOR).innerHTML = toMoviesFromCategoryView(category, movies);
 };
 
