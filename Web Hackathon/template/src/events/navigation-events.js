@@ -4,7 +4,7 @@ import { toMoviesFromCategoryView } from '../views/movie-views.js';
 import { q, setActiveNav } from './helpers.js';
 
 // public API
-export const loadPage = (page = '') => {
+export const loadPage = async (page = '') => {
 
   switch (page) {
 
@@ -12,10 +12,20 @@ export const loadPage = (page = '') => {
       setActiveNav(HOME);
       return renderHome();
 
-      // missing partial implementation
-
-    /* if the app supports error logging, use default to log mapping errors */
-    default: return null;
+      case CATEGORIES:
+        setActiveNav(CATEGORIES);
+        return await renderCategories();
+  
+      case FAVORITES:
+        setActiveNav(FAVORITES);
+        return renderFavorites();
+  
+      case ABOUT:
+        setActiveNav(ABOUT);
+        return renderAbout();
+      default:
+        return null;
+    
   }
 
 };
