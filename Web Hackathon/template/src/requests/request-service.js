@@ -19,5 +19,9 @@ export const loadSingleMovie = (id) => {
 };
 
 export const loadSearchMovies = (searchTerm = '') => {
-  // missing implementation
+  return searchTerm
+    ? movies.filter((movie) =>
+        movie.title.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
+      )
+    : movies;
 };
