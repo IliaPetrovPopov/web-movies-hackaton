@@ -30,5 +30,18 @@ export const toMovieSimple = (movie) => `
 `;
 
 const toMovieDetailed = (movie) => `
-<!-- your template here -->
+<div id="movie-attributes">
+    <h2>${movie.title} (${movie.year})</h2>
+
+    <div class="movie-details">
+      <div id="film-info">
+        <p>Genre: ${movie.genre} </p>
+        <p>Director: ${movie.director} </p>
+        <p>Staring: ${movie.stars.slice().join(', ')} </p>
+        <p>Plot: ${movie.description} </p>
+      </div>
+
+      <img src="${movie.poster}" alt="${movie.title}">
+    </div>
+</div>
 `;
