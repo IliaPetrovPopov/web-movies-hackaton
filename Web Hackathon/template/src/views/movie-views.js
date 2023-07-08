@@ -9,9 +9,7 @@ export const toMoviesFromCategoryView = (category, movies) => `
 </div>
 `;
 
-export const toSingleMovieView = (movie) => `
-<!-- your template here, you can use toMovieDetailed(movie) -->
-`;
+export const toSingleMovieView = (movie) => toMovieDetailed(movie);
 
 export const toMovieSimple = (movie) => `
 <!-- your template here -->
