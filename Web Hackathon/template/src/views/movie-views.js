@@ -12,7 +12,21 @@ export const toMoviesFromCategoryView = (category, movies) => `
 export const toSingleMovieView = (movie) => toMovieDetailed(movie);
 
 export const toMovieSimple = (movie) => `
-<!-- your template here -->
+<div class="movie-simple movie-link" data-movie-id="${movie.id}">
+  <div class="title-class">
+    <h1>${movie.title}</h1>
+    <p>${movie.year}</p>
+  </div>
+  <div class="img-container">
+    <img src="${movie.poster}" alt="${movie.title} poster">
+  </div>
+  <div class="under-img">
+  <button class="movie-details-button" data-category = ${
+    movie.id
+  }>View Details</button>
+  ${renderFavoriteStatus(movie.id)}</div>
+
+  </div>
 `;
 
 const toMovieDetailed = (movie) => `
