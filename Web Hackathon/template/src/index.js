@@ -16,18 +16,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // show category events
-    if (event.target.classList.contains(/* your button class here */)) {
-      renderCategory(+event.target.getAttribute(/* your correct data attribute here */));
+    if (event.target.classList.contains('category-link')) {
+      renderCategory(+event.target.getAttribute('data-category-id'));
     }
 
     // show movie events
-    if (event.target.classList.contains(/* your button class here */)) {
-      renderMovieDetails(+event.target.getAttribute(/* your correct data attribute here */));
+    if (event.target.classList.contains('movie-details-button')) {
+      renderMovieDetails(+event.target.getAttribute('data-category'));
     }
 
     // toggle favorite event
-    if (event.target.classList.contains(/* favorites item class here */)) {
-      toggleFavoriteStatus(+event.target.getAttribute(/* your correct data attribute here */));
+    if (event.target.classList.contains('favorite')) {
+      toggleFavoriteStatus(+event.target.getAttribute('data-movie-id'));
     }
 
   });
