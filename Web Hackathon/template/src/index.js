@@ -19,11 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (event.target.classList.contains('category-link')) {
       renderCategory(+event.target.getAttribute('data-category-id'));
     }
-
+    
+    // show movie events
     // show movie events
     if (event.target.classList.contains('movie-details-button')) {
       renderMovieDetails(+event.target.getAttribute('data-category'));
-    }
+}
+
 
     // toggle favorite event
     if (event.target.classList.contains('favorite')) {

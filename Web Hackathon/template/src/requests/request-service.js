@@ -5,6 +5,7 @@ import {
   getMovieById,
   getCategory,
 } from '../data/movies.js';
+
 export const loadCategories = async () => {
   const categories = await getCategories();
   return categories;

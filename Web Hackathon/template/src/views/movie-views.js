@@ -1,3 +1,4 @@
+import { EMPTY_HEART } from '../common/constants.js';
 import { renderFavoriteStatus } from '../events/favorites-events.js';
 
 export const toMoviesFromCategoryView = (category, movies) => `
@@ -12,7 +13,7 @@ export const toMoviesFromCategoryView = (category, movies) => `
 export const toSingleMovieView = (movie) => toMovieDetailed(movie);
 
 export const toMovieSimple = (movie) => `
-<div class="movie-simple movie-link" data-movie-id="${movie.id}">
+  <div class="movie-simple movie-link" data-movie-id="${movie.id}">
   <div class="title-class">
     <h1>${movie.title}</h1>
     <p>${movie.year}</p>
@@ -45,3 +46,4 @@ const toMovieDetailed = (movie) => `
     </div>
 </div>
 `;
+
