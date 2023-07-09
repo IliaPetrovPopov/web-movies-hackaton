@@ -1,7 +1,23 @@
-import { CONTAINER_SELECTOR, HOME } from '../common/constants.js';
+import {
+  ABOUT,
+  CONTAINER_SELECTOR,
+  HOME,
+  FAVORITES,
+  CATEGORIES,
+} from '../common/constants.js';
 import { toHomeView } from '../views/home-view.js';
 import { toMoviesFromCategoryView } from '../views/movie-views.js';
 import { q, setActiveNav } from './helpers.js';
+import { toCategoriesView } from '../views/category-view.js';
+import { loadCategories } from '../requests/request-service.js';
+import { toAboutView } from '../views/about-view.js';
+import { toFavoritesView } from '../views/favorites-view.js';
+import { getFavorites } from '../../src/data/favorites.js';
+import { getMovieById } from '../../src/data/movies.js';
+import { loadSingleMovie } from '../requests/request-service.js';
+import { toSingleMovieView } from '../views/movie-views.js';
+import { loadCategory } from '../requests/request-service.js';
+import { loadMovies } from '../requests/request-service.js';
 
 // public API
 export const loadPage = async (page = '') => {
